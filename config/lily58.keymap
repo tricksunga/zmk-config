@@ -52,15 +52,15 @@
 
         raise_layer {
 // ------------------------------------------------------------------------------------------------------------
-// |       |  F1   |  F2   |  F3   |  F4   |  F5   |                  |       |       |       |       |       |       |
-// |       |  F6   |  F7   |  F8   |  F9   |  F10  |                  |       |       |       |       |       |       |
-// |       |       |       |       |  F11  |  F12  |                  |       |       |  INS  |  HOME | PG_UP |       |
+// |       |  F1   |  F2   |  F3   |  F4   |  F5   |                  |  F6   |  F7   |  F8   |  F9   |  F10  |  F11  |
+// |       |       |       |       |       |       |                  |       |       |       |       |       |  F12  |
+// |       |       |       |       |       |       |                  |       |       |  INS  |  HOME | PG_UP |       |
 // |       |       |       |       |       |       |       |  |       |       |       |  DEL  |  END  | PG_DN |       |
 //                     |       |       |       |       |          |       |       |       |       |
             bindings = <
-&trans        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                &trans        &trans        &trans        &trans        &trans        &trans
-&trans        &kp F6        &kp F7        &kp F8        &kp F9        &kp F10                               &trans        &trans        &trans        &trans        &trans        &trans
-&trans        &trans        &trans        &trans        &kp F11       &kp F12                               &trans        &trans        &kp INS       &kp HOME      &kp PG_UP     &trans
+&trans        &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
+&trans        &trans        &trans        &trans        &trans        &trans                                &trans        &trans        &trans        &trans        &trans        &kp F12
+&trans        &trans        &trans        &trans        &trans        &trans                                &trans        &trans        &kp INS       &kp HOME      &kp PG_UP     &trans
 &trans        &trans        &trans        &trans        &trans        &trans        &trans    &trans        &trans        &trans        &kp DEL       &kp END       &kp PG_DN     &trans
                                    &trans        &trans        &trans        &trans                  &trans        &trans        &trans        &trans
             >;
