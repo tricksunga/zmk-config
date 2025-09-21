@@ -19,7 +19,7 @@
                 = <&kp 3>
                 , <&macro_wait_time 200>
                 , <&kp SPACE>
-                , <&macro wait time 300>
+                , <&macro_wait_time 300>
                 ;
         };
     };
