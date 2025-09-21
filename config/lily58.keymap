@@ -11,11 +11,16 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
+    macros {
         space_macro: space_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp N3 &macro_wait_time 200 &kp SPACE &macro_wait_time 100>;
+            bindings
+                = <&kp 3>
+                , <&macro_wait_time 200>
+                , <&kp SPACE>
+                , <&macro wait time 300>
+                ;
         };
     };
 
