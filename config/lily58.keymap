@@ -17,10 +17,22 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             tap-ms = <40>;
-            bindings = <&macro_tap &kp N3>
-                     , <&macro_wait_time 500>
-                     , <&macro_tap &kp SPACE>
-                     , <&macro_wait_time 500>;
+            bindings = <
+                &macro_tap &kp N3
+                &macro_wait_time 500
+                &macro_tap &kp SPACE
+                &macro_wait_time 500
+            >;
+        };
+
+        repeat_space_macro: repeat_space_macro {
+            compatible = "zmk,behavior-hold-tap";
+            label = "REP_MACRO";
+            #binding-cells = <0>;
+            tapping-term-ms = <600>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&space_macro>, <&space_macro>;
         };
     };
 
@@ -53,11 +65,11 @@
 // |       |  BLE  |  USB  |       |       |       |       |  |       |       |       |       |       |       |       |
 //                     |       |       |       |       |          |       |       |       |       |
             bindings = <
-&bt BT_CLR    &bt BT_SEL 0  &bt BT_SEL 1  &trans        &trans        &trans                                &trans        &trans        &trans        &kp MINUS     &kp EQUAL     &kp DEL
-&trans        &space_macro  &trans        &trans        &trans        &trans                                &trans        &trans        &trans        &kp LBKT      &kp RBKT      &trans
-&trans        &trans        &trans        &trans        &trans        &trans                                &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &trans
-&trans        &out OUT_BLE  &out OUT_USB  &trans        &trans        &trans        &trans    &trans        &trans        &trans        &trans        &trans        &trans        &trans 
-                                   &trans        &trans        &trans        &trans                  &trans        &trans        &trans        &trans
+&bt BT_CLR    &bt BT_SEL 0         &bt BT_SEL 1  &trans        &trans        &trans                                &trans        &trans        &trans        &kp MINUS     &kp EQUAL     &kp DEL
+&trans        &repeat_space_macro  &trans        &trans        &trans        &trans                                &trans        &trans        &trans        &kp LBKT      &kp RBKT      &trans
+&trans        &trans               &trans        &trans        &trans        &trans                                &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     &trans        &trans
+&trans        &out OUT_BLE         &out OUT_USB  &trans        &trans        &trans        &trans    &trans        &trans        &trans        &trans        &trans        &trans        &trans 
+                                          &trans        &trans        &trans        &trans                  &trans        &trans        &trans        &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
